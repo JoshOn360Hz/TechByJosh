@@ -193,10 +193,11 @@
     padding: 20px;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
-    max-width: 920px;
+    max-width: 900px; /* ✅ 3 cards max width */
     margin: 0 auto;
-    justify-content: center;
+    justify-content: start; /* align items from the left */
   }
+  
   
 
   
@@ -416,12 +417,7 @@
     }
   }
   
-  @media (min-width: 980px) {
-    .projects-grid {
-      max-width: 1190px;
-  
-    }
-    }
+
   
     @media (prefers-color-scheme: light) {
       body {
@@ -458,13 +454,5 @@
         grid-template-columns: 1fr; 
       }
     }
-    
-    @media (max-width: 850px) {
-      .projects-grid {
-        flex-direction: column;
-        overflow-x: visible; 
-        overflow-y: visible; 
-        align-items: center; 
-      }
-    }
+
     
