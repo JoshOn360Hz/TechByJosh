@@ -453,3 +453,9 @@
     }
     
     
+    @media (max-width: 850px) {
+      .services-grid {
+        grid-template-columns: 1fr; 
+      }
+    }
+    
