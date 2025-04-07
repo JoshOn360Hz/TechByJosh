@@ -459,3 +459,12 @@
       }
     }
     
+    @media (max-width: 850px) {
+      .projects-grid {
+        flex-direction: column;
+        overflow-x: visible; 
+        overflow-y: visible; 
+        align-items: center; 
+      }
+    }
+    
