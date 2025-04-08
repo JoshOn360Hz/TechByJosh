@@ -208,15 +208,15 @@
     padding: 20px;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
-    max-width: 900px; /* ✅ 3 cards max width */
+    max-width: 900px; 
     margin: 0 auto;
-    justify-content: start; /* align items from the left */
+    justify-content: start; 
   }
   
   .main-container {
-    max-width: 1200px; /* or 1100px / 1000px depending how narrow you want */
-    margin: 0 auto;    /* centers it horizontally */
-    padding: 0 20px;   /* a little side padding so it’s not edge-to-edge */
+    max-width: 1200px;
+    margin: 0 auto;    
+    padding: 0 20px;   
   }
   
 
@@ -245,29 +245,39 @@
     text-decoration: none;
   }
   
-#custom-cursor {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 20px;
-  height: 20px;
-  background-color: rgba(255, 255, 255, 0.8);
-  border-radius: 50%;
-  border: rgba(255, 255, 255, 0.5) 1px solid;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  transition: width 0.2s ease, height 0.2s ease, background-color 0.3s ease, transform 0.1s ease;
-  z-index: 9999;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
-
-#custom-cursor.hover {
-  width: 30px;
-  height: 30px;
-  background-color: rgba(255, 255, 255, 0.3);
-}
-
+  .js-enabled * {
+    cursor: none !important;
+  }
+  
+  
+  #custom-cursor {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 50%;
+    border: rgba(255, 255, 255, 0.5) 1px solid;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: width 0.2s ease, height 0.2s ease, background-color 0.3s ease, transform 0.1s ease;
+    z-index: 9999;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+  
+  #custom-cursor.hover {
+    width: 30px;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+  
 @media (prefers-color-scheme: dark) {
   #custom-cursor {
     background-color: rgba(255, 255, 255, 0.1);
@@ -363,12 +373,7 @@
     margin-top: 20px;
     flex-wrap: wrap;
   }
-  body {
-    cursor: none;
-  }
-  a, button {
-    cursor: none;
-  }
+
   
   .app-store-badge {
     width: 150px;
@@ -421,6 +426,38 @@
   #contactCard .btn:hover {
     background: rgba(255, 255, 255, 0.2);
     transform: translateY(-2px);
+  }
+  #contactCard {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 300px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    pointer-events: none;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    background-color:#212529;
+  }
+  #contactCard .btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+  }
+  #toggleContact:checked ~ #contactCard {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+  
+  #toggleContact {
+    display: none;
+  #menu-icon {
+    transition: all 0.3s ease;
+    color: white;
+  }
   }
   #menu-icon {
     transition: all 0.3s ease;
