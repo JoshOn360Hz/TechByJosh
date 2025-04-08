@@ -27,23 +27,42 @@
     color: white;
   }
   
-  .skills-pills .badge {
-    font-size: 1rem;
-    padding: 10px 20px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 999px;
+  .skills-pills-container {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .skills-pills-container h4 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
     color: white;
-    transition: background 0.3s, transform 0.3s;
-    margin: 5px 8px;
+  }
+  
+  .skills-pills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .skills-pills .badge {
+    background: transparent;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    padding: 10px 20px;
+    border-radius: 999px;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background 0.3s, color 0.3s, transform 0.3s;
   }
   
   .skills-pills .badge:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);
     transform: translateY(-2px);
+    color: white;
   }
+  
+  
   
   .github-circle {
     width: 45px;
@@ -54,9 +73,8 @@
     padding: 0;
     margin: 0;
     font-size: 1.5rem;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+
+    
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 999px;
     color: white;
@@ -106,9 +124,6 @@
   }
   
   .nav-button {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
     color: white;
     padding: 6px 16px;
     border-radius: 999px;
@@ -198,12 +213,36 @@
     justify-content: start; /* align items from the left */
   }
   
+  .main-container {
+    max-width: 1200px; /* or 1100px / 1000px depending how narrow you want */
+    margin: 0 auto;    /* centers it horizontally */
+    padding: 0 20px;   /* a little side padding so it’s not edge-to-edge */
+  }
   
 
   
   .projects-grid {
     scrollbar-width: thin;
     scrollbar-color: #555 transparent;
+  }
+  .project-link-btn {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 999px; /* pill shape */
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background 0.3s, transform 0.3s;
+  }
+  
+  .project-link-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    text-decoration: none;
   }
   
   .project-card {
@@ -237,14 +276,22 @@
   
   
   
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); 
-    padding: 40px 20px;
-    max-width: 1200px;
+  .services-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    max-width: 1000px;
     margin: 0 auto;
-    justify-content: center;
+    padding: 40px 20px;
   }
+  
+  .service-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  
   
   
 
