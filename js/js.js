@@ -1,4 +1,3 @@
-// Modern JavaScript for TechByJosh website
 function setupMobileNavigation() {
   const hamburger = document.querySelector('.hamburger');
   const navMenu = document.querySelector('.nav-menu');
@@ -58,7 +57,6 @@ function setupScrollAnimations() {
     });
   }, observerOptions);
 
-  // Animate service cards and testimonial cards
   document.querySelectorAll('.service-card, .testimonial-card').forEach(card => {
     card.style.opacity = '0';
     card.style.transform = 'translateY(30px)';
@@ -85,7 +83,6 @@ function setupNavbarBehavior() {
 }
 
 function setupSmoothScrolling() {
-  // CTA button scroll to services
   const ctaButton = document.querySelector('.cta-button');
   if (ctaButton) {
     ctaButton.addEventListener('click', () => {
@@ -115,21 +112,17 @@ function setupServiceCardAnimations() {
 }
 
 function setupContactLinks() {
-  // Ensure contact links work properly
   const contactLinks = document.querySelectorAll('.contact-button');
   contactLinks.forEach(link => {
     link.addEventListener('click', (e) => {
-      // Allow default behavior for tel:, mailto:, and sms: links
       const href = link.getAttribute('href');
       if (href && (href.startsWith('tel:') || href.startsWith('mailto:') || href.startsWith('sms:'))) {
-        // Let the browser handle these protocols
         return;
       }
     });
   });
 }
 
-// Initialize everything when the DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
   setupMobileNavigation();
   setupScrollAnimations();
@@ -138,13 +131,11 @@ document.addEventListener('DOMContentLoaded', function() {
   setupServiceCardAnimations();
   setupContactLinks();
   
-  // Add a loading complete class to body for any additional styling
   setTimeout(() => {
     document.body.classList.add('loaded');
   }, 500);
 });
 
-// Handle window resize events
 window.addEventListener('resize', () => {
   const navMenu = document.querySelector('.nav-menu');
   const hamburger = document.querySelector('.hamburger');
@@ -156,18 +147,14 @@ window.addEventListener('resize', () => {
   }
 });
 
-// Add some performance optimizations
 window.addEventListener('load', () => {
-  // Remove any loading states
   document.body.classList.add('fully-loaded');
 });
 
-// Optimize scroll performance
 let ticking = false;
 function updateNavbarOnScroll() {
   if (!ticking) {
     requestAnimationFrame(() => {
-      // Navbar scroll logic is already handled in setupNavbarBehavior
       ticking = false;
     });
     ticking = true;
